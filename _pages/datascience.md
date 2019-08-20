@@ -1,12 +1,18 @@
 layout: archive
-permalink: /Data=science
+permalink: /datascience
+title: "Data Science"
+author_profile: true
+header:
+ image:"/images/cbus.jpg"
+ 
+ 
+{% include base_path %}
+{% include group-by-array collection=site.posts field="tags" %}
 
-Copy the code below and place it in your 404.md file.
-
-<script type="text/javascript">
-  var GOOG_FIXURL_LANG = 'en';
-  var GOOG_FIXURL_SITE = '{{ site.url }}'
-</script>
-<script type="text/javascript"
-  src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js">
-</script>
+{% for tag in group_names %}
+  {% assign posts = group_items[forloop.index0] %}
+  <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
+  {% for post in posts %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endfor %}
