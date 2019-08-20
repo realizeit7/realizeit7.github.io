@@ -1,10 +1,11 @@
+---
 layout: archive
-permalink: /datascience
+permalink: /datascience/
 title: "Data Science"
 author_profile: true
 header:
  image:"/images/cbus.jpg"
- 
+---
  
 {% include base_path %}
 {% include group-by-array collection=site.posts field="tags" %}
