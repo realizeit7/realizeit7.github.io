@@ -113,7 +113,7 @@ author:
   location         : "Columbus, OH"
   email            : "realizeit7@gmail.com"
   github           : "realizeit7"
-  linkedin         : "in/seo-wook-choi-a9392667"
+  linkedin         : "seo-wook-choi-a9392667"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -296,3 +296,13 @@ defaults:
       comments: # true
       share: true
       related: true
+  
+  # _pages
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
