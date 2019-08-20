@@ -1,9 +1,9 @@
 # main links
 main:
   - title: "About"
-    url: /about
+    url: _pages/about
   - title: "Data Science"
-    url: /datascience
+    url: _pages/datascience/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
