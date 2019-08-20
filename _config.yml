@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Seo Wook Choi"
+title                    : "Site Title"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Seo Wook Choi"
-description              : "Data Science Portfolio"
+description              : "An amazing website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -109,11 +109,9 @@ analytics:
 author:
   name             : "Seo Wook Choi"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data Science Portfolio"
-  location         : "Columbus, OH"
+  bio              : "I am an **amazing** person."
+  location         : "Somewhere"
   email            :
-  github           : "realizeit7"
-  linkedin         : "realizeit7"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -296,11 +294,3 @@ defaults:
       comments: # true
       share: true
       related: true
-
-#_pages
-- scope:
-    path: ""
-    type: pages
-  values:
-   layout: single
-   author_profile: true
