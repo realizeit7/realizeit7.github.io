@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-  image: "images/RESUME_DATA_Science_v2.pdf"
+  image: "images/cbus.pdf"
 ---
     
 I am good
