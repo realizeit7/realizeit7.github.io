@@ -4,7 +4,7 @@ permalink: /datascience/
 title: "Data Science"
 author_profile: true
 header:
- image:"/images/cbus.jpg"
+ image: "/images/cbus.jpg"
 ---
  
 {% include base_path %}
