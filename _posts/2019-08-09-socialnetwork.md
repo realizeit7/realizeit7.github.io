@@ -7,7 +7,7 @@ header:
 excerpt: "Machine Learning, Social netowork, Data Science"
 ---
 
-# H1 Heading
+# H1 Headin
 
 ## H2 Heading
 
