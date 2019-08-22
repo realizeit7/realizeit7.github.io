@@ -4,7 +4,6 @@ date: 2018-01-28
 tags: [social network, data science, visualization, statistics, igrpah]
 header:
  image: "/images/cbus.jpg"
-excerpt: "Machine Learning, Social netowork, Data Science"
 ---
 
 # H1 Headin
