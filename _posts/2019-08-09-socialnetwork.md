@@ -1,9 +1,9 @@
 ---
 title: " Social Network Project"
 date: 2018-01-28
-tags: [social network, data science, visualization, statistics, igrpah]
+tags: [data science]
 header:
- image: "/images/cbus.jpg"
+image: "/images/cbus.jpg"
 ---
 
 # H1 Headin
