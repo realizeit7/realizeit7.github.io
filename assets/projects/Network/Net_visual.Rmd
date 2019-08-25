@@ -1,0 +1,83 @@
+---
+title: "Network_visualization"
+author: "Seo Wook Choi"
+date: "8/25/2019"
+output: html_document
+---
+
+## Network visualization (ego and contract)
+This is based on the part of project during Micron data science intern (2019).
+The original data was Skype call between employees. However, there is a security issue that I cannot present any of those information personally. The example is based on genertaed network and name data (all fake).
+
+### Egonet
+Most cases, presenting whole network in one plot makes reader cannot understand nothing from it.
+When it comes to 100 vertices, whole netowrk plot seems to be meaningless.
+In this case, engonet helps the visualzation to focuse on specific nodes of interest.
+```{r, message=FALSE}
+library(igraph)
+library(tidyverse)
+library(randomNames)
+set.seed(4)
+randomdata=randomNames(500,which.names="both",sample.with.replacement = FALSE,return.complete.data=TRUE)
+g <- erdos.renyi.game(500, 5000, type = "gnm",directed=TRUE) %>%
+  set_vertex_attr("ethnicity", value = randomdata$ethnicity)
+row.names(randomdata)=paste(randomdata$first_name,randomdata$last_name,sep=", ") 
+g.adjac=as_adjacency_matrix(g)
+V(g)$name=rownames(randomdata)
+
+set_vertex_attr(g,"ethnicity",value=randomdata$ethnicity)
+selnodes <- V(g)[name %in% "Wyatt, Raetz"]
+selnodes <- V(g)[name %in% "Laura, Vasquez-Romero"]
+#selnodes <- V(wiki.graph)[name %in% "Roy, Abbagail"]
+# get their network_c neighborhood 
+selegoV <- ego(g, order=1, nodes = selnodes, mode = "all", mindist = 0)
+selegoG <- induced_subgraph(g,unlist(selegoV))
+layout <- layout.lgl(selegoG,repulserad=500)
+plot.igraph(selegoG
+            ,vertex.label=V(selegoG)$name
+            ,layout=layout
+            ,side=1
+            ,edge.arrow.size=0.2
+            ,vertex.label.font=1
+            ,vertex.label.cex=1.2
+            ,edge.width=0.5
+            ,mark.border=NA
+            ,vertex.label.dist=0.5  
+            ,vertex.label.degree=-pi/2
+            ,vertex.label.family="sans" #Helvetica"
+)
+
+
+```
+
+### Contract
+The "contract.vertices" function is to collapse the nodes with same traits.
+In original example in Micron project, it was employees' postion name.
+In this case, randomly assigned ethnicity in the same clique (connected subnetworks).
+
+
+```{r }
+index=as.integer(as.factor(randomdata$ethnicity))
+index=replace_na(index,max(index,na.rm=TRUE)+1)
+network_c<- contract.vertices(g,index, vertex.attr.comb="first")
+network_c
+V(network_c)$name=c("Latino", "White", "Asian", "Black", "Native","Other")
+network_c2=igraph::simplify(network_c, remove.multiple = TRUE, remove.loops = TRUE)
+plot.igraph(network_c2
+            ,vertex.label=V(network_c2)$name
+            ,layout=layout
+            ,side=1
+            ,edge.arrow.size=0.2
+            ,vertex.label.font=1
+            ,vertex.label.cex=1.2
+            ,edge.width=0.5
+            ,mark.border=NA
+            ,vertex.label.dist=0.5  
+            ,vertex.label.degree=-pi/2
+            ,vertex.label.family="sans" #Helvetica"
+)
+
+```
+
+### Adjust Size of nodes based on centrality (or hub and authority)
+This part will be posted later.
