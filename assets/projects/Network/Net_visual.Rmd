@@ -1,7 +1,7 @@
 ---
 title: "Network_visualization"
 author: "Seo Wook Choi"
-date: "8/25/2019"
+date: "2019-08-25"
 output: html_document
 ---
 
