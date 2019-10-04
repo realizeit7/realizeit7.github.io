@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "University name matcher"
+title: "University Name Matcher (Deep Learning)"
 description: "University name matcher using deep learning (deep matcher)"
-tags: [deeplearning]
+tags: [Deep learning]
 header:
 image: "/images/cbus.jpg"
 ---
