@@ -4,8 +4,8 @@ permalink: /about/
 header:
 
 ---
-    
-I am good
+
+Love Data Science, Statistics, Cognitive Science, soccer, basketball, football and other outdoor activities
 
 
 {% include group-by-array collection=site.posts field="tags" %}
