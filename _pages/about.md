@@ -5,7 +5,7 @@ header:
 
 ---
 
-Love Data Science, Statistics, Cognitive Science, soccer, basketball, football and other outdoor activities
+Love data science, statistics, cognitive science, soccer, basketball, football and other outdoor activities
 
 
 {% include group-by-array collection=site.posts field="tags" %}
