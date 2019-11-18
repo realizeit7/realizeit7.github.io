@@ -1,7 +1,7 @@
 ---
 layout: archive
-permalink: /datascience/
-title: "Data Science"
+permalink: /projects/
+title: "Projects"
 author_profile: true
 header:
  image: "/images/cbus.jpg"
