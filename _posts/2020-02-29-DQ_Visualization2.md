@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Network Visualization"
-description: "Portion of Network analysis project focusing on visualization"
-tags: [Social Networkss]
+title: "Data Exploration"
+description: "Data exploration project with Google and Apple store data"
+tags: [Python Project]
 header:
 image: "/images/cbus.jpg"
 ---
@@ -10,5 +10,5 @@ image: "/images/cbus.jpg"
 <div style='position: relative; width: 100%; height: 11200px; padding-bottom: 95%;'>
 <iframe style='position: absolute; left: 0px; top: 0px; width: 99%; height: 100%; z-index:1;'
         frameborder="0"  scrolling="no"
-       src="/assets/projects/Network/Net_visual.html"></iframe>
+       src="/assets/projects/DQ_Visualization_2/Basics.html"></iframe>
 </div>
