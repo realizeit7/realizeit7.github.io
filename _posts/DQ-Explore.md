@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Data Exploration"
 description: "Data exploration project with Google and Apple store data"
