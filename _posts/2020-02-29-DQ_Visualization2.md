@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Data Exploration"
-description: "Data exploration project with Google and Apple store data"
+title: "Data Visualization 2"
+description: "The gender gap in college majors"
 tags: [Python Project]
 header:
 image: "/images/cbus.jpg"
