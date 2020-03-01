@@ -2,7 +2,7 @@
 layout: post
 title: "Network Visualization"
 description: "Portion of Network analysis project focusing on visualization"
-tags: [social network]
+tags: [Social Network]
 header:
 image: "/images/cbus.jpg"
 ---
