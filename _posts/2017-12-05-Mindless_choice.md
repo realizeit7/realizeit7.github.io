@@ -1,7 +1,7 @@
 layout: post
 title: "Modeling Mindless Choice"
-description: "Manuscript"
-tags: [Cognitive Modeling]
+description: "Thesis"
+tags: [Social Network]
 header:
 image: "/images/cbus.jpg"
 ---
