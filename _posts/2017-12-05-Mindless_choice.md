@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Modeling Mindless Choice"
 description: "Thesis"
