@@ -1,0 +1,66 @@
+---
+title: "Section 1-1"
+author: "SeoWook"
+date: "6/25/2020"
+output: html_document
+---
+
+There are high demands of people who want to build groups outside of there jobs for multiple interests.
+Some people want to build networks for their career, some people want to learn new things and some people want to enjoy a hobby with others after work.
+Meetup is a service which provides an on-line group for hosting an in-person meeting for a variety of interest.
+I am going to explore which topics are popular in different cities.
+There are three cities in this dataset. New York City, San Francisco, Chicago.
+I will provide the top 5 topics of interest in Three cities
+
+```{r }
+
+library(ggplot2)
+library(igraph)
+library(tidyverse)
+setwd("~/Dropbox/incubdataset")
+categories <- read.csv("~/Dropbox/incubdataset/categories.csv")
+cities <- read.csv("~/Dropbox/incubdataset/cities.csv")
+events <- read.csv("~/Dropbox/incubdataset/events.csv")
+groups_topics <- read.csv("~/Dropbox/incubdataset/groups_topics.csv")
+groups <- read.csv("~/Dropbox/incubdataset/groups.csv")
+topics <- read.csv("~/Dropbox/incubdataset/topics.csv")
+
+
+groups2= groups %>% filter(city %in% c("New York","West New York"))
+groups_topic_ny= groups2 %>%  count (category.name)
+top5_ny=top_n(arrange(as.data.frame(groups_topic_ny),n),5,n)
+counts <- top5_ny$n
+p<-ggplot(data=top5_ny, aes(x=reorder(category.name, n), y=n)) +
+  geom_bar(stat="identity", color='skyblue',fill='steelblue')
+p + coord_flip() + labs(title="Popular Groups in NYC",
+                        x ="Group Type", y = "Number of Groups (Top 5)")
+
+
+groups3= groups %>% filter(city %in% c("Chicago","Chicago Heights","Chicago Ridge","North Chicago","West Chicago"))
+
+groups_topic_ch= groups3%>%  count (category.name)
+top5_ch=top_n(arrange(as.data.frame( groups_topic_ch),n),5,n)
+counts <- top5_ch$n
+p<-ggplot(data=top5_ch, aes(x=reorder(category.name, n), y=n)) +
+  geom_bar(stat="identity", color='skyblue',fill='steelblue')
+p + coord_flip() + labs(title="Popular Groups in Chicago",
+                        x ="Group Type", y = "Number of Groups (Top 5)")
+
+
+
+groups4= groups %>% filter(city %in% c("South San Francisco","San Francisco"))
+groups_topic_sf= groups4 %>%  count (category.name)
+top5_sf=top_n(arrange(as.data.frame(groups_topic_sf),n),5,n)
+counts <- top5_sf$n
+
+p<-ggplot(data=top5_sf, aes(x=reorder(category.name, n), y=n)) +
+  geom_bar(stat="identity", color='skyblue',fill='steelblue')
+
+p + coord_flip() + labs(title="Popular Groups in SF",
+                        x ="Group Type", y = "Number of Groups (Top 5)")
+
+
+
+```
+
+For all three cities first to fourth most popular topics are tech, career/business, socializing, and health/wellbing. For both Chicago and NYC language/ethnic identity is fifth. In SF, outdoor/adventure is fifth. The pattern in Chicago and NYC are similar and SF shows a different pattern. The popularity of tech is very high in SF compared to the other two cities. I think it is because SF has the best tech-based industry. Also, SF people are more interested in outdoor activity, because of its good weather in California. In the next section, I will see the association between those topics in terms of the user's choice of topic group.
